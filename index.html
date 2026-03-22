@@ -1,0 +1,1250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Khalid Naeem | KhalidPortfolio</title>
+  <meta name="description" content="Khalid Naeem — creative digital portfolio with glassmorphism, 3D-inspired visuals, and a responsive modern layout." />
+  <meta property="og:title" content="Khalid Naeem | KhalidPortfolio" />
+  <meta property="og:description" content="A bold, modern portfolio with glassmorphism, 3D visual elements, layered gradients, and premium UI styling." />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Khalid Naeem | KhalidPortfolio" />
+  <meta name="twitter:description" content="A bold, modern portfolio with glassmorphism, 3D visual elements, layered gradients, and premium UI styling." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #07111f;
+      --bg-soft: #0c1830;
+      --surface: rgba(255,255,255,0.08);
+      --surface-2: rgba(255,255,255,0.05);
+      --text: #eef4ff;
+      --muted: #a9b5cc;
+      --primary: #8b5cf6;
+      --secondary: #06b6d4;
+      --accent: #ec4899;
+      --accent-2: #22c55e;
+      --border: rgba(255,255,255,0.14);
+      --shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+      --radius: 24px;
+      --container: 1200px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', sans-serif;
+      color: var(--text);
+      line-height: 1.6;
+      background:
+        radial-gradient(circle at top left, rgba(139, 92, 246, 0.25), transparent 28%),
+        radial-gradient(circle at top right, rgba(6, 182, 212, 0.22), transparent 22%),
+        radial-gradient(circle at bottom center, rgba(236, 72, 153, 0.15), transparent 24%),
+        linear-gradient(180deg, #060c18 0%, #0a1325 40%, #08101d 100%);
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    img, svg { max-width: 100%; display: block; }
+    a { text-decoration: none; color: inherit; }
+    ul { list-style: none; }
+
+    .container {
+      width: calc(100% - 1.5rem);
+      margin-inline: auto;
+    }
+
+    .section { padding: 1.5rem 0; margin: 0; position: relative; overflow: hidden; }
+
+.section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 20% 20%, rgba(139,92,246,0.12), transparent 30%),
+              radial-gradient(circle at 80% 70%, rgba(6,182,212,0.12), transparent 30%);
+  z-index: -1;
+}
+
+    .section-title {
+      font-family: 'Manrope', sans-serif;
+      font-size: clamp(1.85rem, 3vw, 3rem);
+      line-height: 1.1;
+      margin-bottom: 1rem;
+      letter-spacing: -0.03em;
+    }
+
+    .section-subtitle {
+      max-width: 760px;
+      color: var(--muted);
+      margin-bottom: 1rem;
+      font-size: 1.03rem;
+      font-size: 1.03rem;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.55rem;
+      background: rgba(255, 255, 255, 0.08);
+      color: #dbeafe;
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      padding: 0.6rem 1rem;
+      border-radius: 999px;
+      font-size: 0.9rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.08);
+    }
+
+    .gradient-text {
+      background: linear-gradient(90deg, #c084fc, #67e8f9, #f9a8d4);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(18px);
+      background: rgba(6, 12, 24, 0.58);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .nav {
+      min-height: 78px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .logo {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.8rem;
+      font-family: 'Manrope', sans-serif;
+      font-weight: 800;
+      font-size: 1.2rem;
+      letter-spacing: -0.03em;
+    }
+
+    .logo-mark {
+      width: 42px;
+      height: 42px;
+      border-radius: 14px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, rgba(139, 92, 246, 0.9), rgba(6, 182, 212, 0.9), rgba(236, 72, 153, 0.9));
+      box-shadow: 0 10px 24px rgba(139, 92, 246, 0.35);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .logo-mark::before {
+      content: "";
+      position: absolute;
+      inset: 1px;
+      border-radius: 13px;
+      background: linear-gradient(135deg, rgba(255,255,255,0.22), rgba(255,255,255,0.02));
+    }
+
+    .logo-mark span {
+      position: relative;
+      z-index: 1;
+      font-weight: 800;
+      color: white;
+      font-size: 1rem;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.4rem;
+      color: var(--muted);
+      font-weight: 600;
+    }
+
+    .nav-links a:hover { color: #fff; }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 16px;
+      padding: 0.95rem 1.35rem;
+      font-family: inherit;
+      font-weight: 700;
+      transition: 0.25s ease;
+      border: 1px solid transparent;
+      cursor: pointer;
+    }
+
+    .btn-primary {
+      color: white;
+      background: linear-gradient(135deg, var(--primary), var(--secondary), var(--accent));
+      box-shadow: 0 16px 36px rgba(139, 92, 246, 0.28);
+    }
+
+    .btn-primary:hover,
+    .btn-outline:hover { transform: translateY(-2px); }
+
+    .btn-outline {
+      background: rgba(255,255,255,0.06);
+      color: white;
+      border-color: rgba(255,255,255,0.14);
+      backdrop-filter: blur(10px);
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      padding: 2rem 0 1.5rem;
+    }
+
+    .orb,
+    .orb-small,
+    .orb-pink {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(8px);
+      z-index: -1;
+    }
+
+    .orb {
+      width: 320px;
+      height: 320px;
+      background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.7), rgba(139,92,246,0.55), rgba(139,92,246,0));
+      top: 0;
+      right: -70px;
+    }
+
+    .orb-small {
+      width: 260px;
+      height: 260px;
+      background: radial-gradient(circle at 40% 35%, rgba(255,255,255,0.7), rgba(6,182,212,0.5), rgba(6,182,212,0));
+      bottom: 40px;
+      left: -60px;
+    }
+
+    .orb-pink {
+      width: 220px;
+      height: 220px;
+      background: radial-gradient(circle at 35% 30%, rgba(255,255,255,0.65), rgba(236,72,153,0.55), rgba(236,72,153,0));
+      bottom: -40px;
+      right: 25%;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.95fr;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .hero h1 {
+      font-family: 'Manrope', sans-serif;
+      font-size: clamp(2.7rem, 5vw, 5.4rem);
+      line-height: 1.02;
+      letter-spacing: -0.05em;
+      margin-bottom: 1rem;
+    }
+
+    .hero p {
+      color: var(--muted);
+      font-size: 1.08rem;
+      max-width: 640px;
+      margin-bottom: 1.75rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      margin-bottom: 1rem;
+    }
+
+    .share-toast {
+      position: fixed;
+      bottom: 1.25rem;
+      left: 50%;
+      transform: translateX(-50%) translateY(120%);
+      z-index: 9999;
+      max-width: min(90vw, 420px);
+      padding: 0.85rem 1.25rem;
+      border-radius: 14px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--text);
+      background: rgba(12, 24, 48, 0.92);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(12px);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease, transform 0.35s ease;
+    }
+
+    .share-toast.is-visible {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
+    }
+
+    .metrics {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+
+    .metric,
+    .glass,
+    .skill-card,
+    .project-card,
+    .contact-card,
+    .card {
+      background: linear-gradient(180deg, rgba(255,255,255,0.09), rgba(255,255,255,0.04));
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(14px);
+    }
+
+    .metric {
+      padding: 0.8rem;
+    }
+
+    .metric h3 {
+      font-family: 'Manrope', sans-serif;
+      font-size: 1.8rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .metric p { color: var(--muted); font-size: 0.92rem; }
+
+    .hero-card {
+      position: relative;
+      padding: 1.5rem;
+      border-radius: 34px;
+      min-height: 560px;
+      overflow: hidden;
+      background:
+        linear-gradient(160deg, rgba(255,255,255,0.1), rgba(255,255,255,0.03)),
+        radial-gradient(circle at top left, rgba(139,92,246,0.28), transparent 35%),
+        radial-gradient(circle at bottom right, rgba(6,182,212,0.24), transparent 30%),
+        #091223;
+      border: 1px solid rgba(255,255,255,0.12);
+      box-shadow: 0 30px 70px rgba(0,0,0,0.42);
+    }
+
+    .hero-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(120deg, rgba(255,255,255,0.12), transparent 24%, transparent 70%, rgba(255,255,255,0.08));
+      pointer-events: none;
+    }
+
+    .dashboard-card {
+      position: relative;
+      z-index: 2;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.11);
+      border-radius: 24px;
+      padding: 1.1rem;
+      margin-bottom: 1rem;
+      backdrop-filter: blur(8px);
+    }
+
+    .dashboard-card h4 {
+      font-size: 0.9rem;
+      opacity: 0.88;
+      margin-bottom: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .bars { display: grid; gap: 0.8rem; }
+    .bar {
+      height: 10px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.14);
+      overflow: hidden;
+    }
+
+    .bar span {
+      display: block;
+      height: 100%;
+      border-radius: inherit;
+      background: linear-gradient(90deg, #a78bfa, #67e8f9, #f9a8d4);
+    }
+
+    .mini-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .mini-card {
+      background: rgba(255,255,255,0.96);
+      color: #0b1220;
+      border-radius: 20px;
+      padding: 1rem;
+      box-shadow: 0 12px 24px rgba(0,0,0,0.18);
+    }
+
+    .mini-card strong {
+      display: block;
+      font-family: 'Manrope', sans-serif;
+      font-size: 1.45rem;
+      color: #120f2f;
+      margin-bottom: 0.2rem;
+    }
+
+    .three-d-scene {
+      position: absolute;
+      right: 10px;
+      bottom: -10px;
+      width: 92%;
+      height: 250px;
+      z-index: 1;
+      perspective: 1000px;
+    }
+
+    .cube {
+      position: absolute;
+      width: 120px;
+      height: 120px;
+      transform-style: preserve-3d;
+      animation: floatCube 9s ease-in-out infinite;
+    }
+
+    .cube.one {
+      right: 30px;
+      bottom: 30px;
+      transform: rotateX(-24deg) rotateY(35deg);
+    }
+
+    .cube.two {
+      width: 82px;
+      height: 82px;
+      right: 180px;
+      bottom: 120px;
+      transform: rotateX(-18deg) rotateY(-28deg);
+      animation-duration: 11s;
+    }
+
+    .face {
+      position: absolute;
+      inset: 0;
+      border-radius: 20px;
+      border: 1px solid rgba(255,255,255,0.22);
+      background: linear-gradient(135deg, rgba(139,92,246,0.82), rgba(6,182,212,0.65));
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.3);
+    }
+
+    .cube.two .face { background: linear-gradient(135deg, rgba(236,72,153,0.86), rgba(139,92,246,0.72)); }
+
+    .front  { transform: translateZ(60px); }
+    .back   { transform: rotateY(180deg) translateZ(60px); }
+    .right  { transform: rotateY(90deg) translateZ(60px); }
+    .left   { transform: rotateY(-90deg) translateZ(60px); }
+    .top    { transform: rotateX(90deg) translateZ(60px); }
+    .bottom { transform: rotateX(-90deg) translateZ(60px); }
+
+    .cube.two .front,
+    .cube.two .back,
+    .cube.two .right,
+    .cube.two .left,
+    .cube.two .top,
+    .cube.two .bottom { transform-origin: center; }
+
+    .cube.two .front  { transform: translateZ(41px); }
+    .cube.two .back   { transform: rotateY(180deg) translateZ(41px); }
+    .cube.two .right  { transform: rotateY(90deg) translateZ(41px); }
+    .cube.two .left   { transform: rotateY(-90deg) translateZ(41px); }
+    .cube.two .top    { transform: rotateX(90deg) translateZ(41px); }
+    .cube.two .bottom { transform: rotateX(-90deg) translateZ(41px); }
+
+    .ring {
+      position: absolute;
+      left: 40px;
+      bottom: 40px;
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      border: 22px solid rgba(103, 232, 249, 0.28);
+      border-top-color: rgba(249, 168, 212, 0.95);
+      border-right-color: rgba(192, 132, 252, 0.75);
+      transform: rotateX(68deg) rotateZ(20deg);
+      box-shadow: 0 0 40px rgba(103, 232, 249, 0.16);
+      animation: spinRing 10s linear infinite;
+    }
+
+    .sphere {
+      position: absolute;
+      width: 96px;
+      height: 96px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 30% 28%, rgba(255,255,255,0.95), rgba(103,232,249,0.9) 18%, rgba(139,92,246,0.72) 58%, rgba(9,18,35,0.15) 100%);
+      box-shadow: inset -18px -18px 30px rgba(0,0,0,0.2), 0 18px 40px rgba(103,232,249,0.18);
+      right: 120px;
+      bottom: 24px;
+      animation: floatSphere 8s ease-in-out infinite;
+    }
+
+    .sphere::after {
+      content: "";
+      position: absolute;
+      inset: 12px;
+      border-radius: 50%;
+      border: 1px solid rgba(255,255,255,0.18);
+    }
+
+    .pyramid {
+      position: absolute;
+      left: 170px;
+      bottom: 18px;
+      width: 0;
+      height: 0;
+      border-left: 56px solid transparent;
+      border-right: 56px solid transparent;
+      border-bottom: 98px solid rgba(236,72,153,0.78);
+      filter: drop-shadow(0 16px 26px rgba(236,72,153,0.18));
+      transform: rotateX(16deg) rotateZ(-12deg);
+      animation: floatPyramid 9s ease-in-out infinite;
+    }
+
+    .pyramid::before {
+      content: "";
+      position: absolute;
+      left: -56px;
+      top: 98px;
+      width: 112px;
+      height: 18px;
+      background: linear-gradient(90deg, rgba(255,255,255,0.18), rgba(255,255,255,0.04));
+      border-radius: 50%;
+      filter: blur(5px);
+    }
+
+    .hex-orb {
+      position: absolute;
+      right: 220px;
+      bottom: 62px;
+      width: 72px;
+      height: 72px;
+      background: linear-gradient(135deg, rgba(34,197,94,0.9), rgba(6,182,212,0.82));
+      clip-path: polygon(25% 6%, 75% 6%, 100% 50%, 75% 94%, 25% 94%, 0% 50%);
+      box-shadow: 0 14px 28px rgba(34,197,94,0.16);
+      animation: spinHex 12s linear infinite;
+    }
+
+    @keyframes floatCube {
+      0%, 100% { transform: translateY(0) rotateX(-24deg) rotateY(35deg); }
+      50% { transform: translateY(-14px) rotateX(-20deg) rotateY(48deg); }
+    }
+
+    @keyframes spinRing {
+      0% { transform: rotateX(68deg) rotateZ(0deg); }
+      100% { transform: rotateX(68deg) rotateZ(360deg); }
+    }
+
+    @keyframes floatSphere {
+      0%, 100% { transform: translateY(0) scale(1); }
+      50% { transform: translateY(-16px) scale(1.04); }
+    }
+
+    @keyframes floatPyramid {
+      0%, 100% { transform: translateY(0) rotateX(16deg) rotateZ(-12deg); }
+      50% { transform: translateY(-12px) rotateX(10deg) rotateZ(-4deg); }
+    }
+
+    @keyframes spinHex {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    .about-grid,
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+      align-items: start;
+    }
+
+    .card { padding: 1rem; }
+
+    .about-list {
+      display: grid;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .about-item {
+      padding: 1rem 1.1rem;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .about-item h3,
+    .skill-card h3,
+    .project-card h3,
+    .contact-card h3 {
+      font-size: 1.05rem;
+      margin-bottom: 0.4rem;
+      color: #fff;
+    }
+
+    .about-item p,
+    .skill-card p,
+    .project-card p,
+    .contact-card p {
+      color: var(--muted);
+      font-size: 0.96rem;
+    }
+
+    .skills-grid,
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.75rem;
+    }
+
+    .variants-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.75rem;
+      margin-top: 1rem;
+      margin-top: 2rem;
+    }
+
+    .skill-card,
+    .project-card,
+    .contact-card {
+      padding: 1rem;
+      transition: 0.25s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .skill-card::before,
+    .project-card::before,
+    .contact-card::before {
+      content: "";
+      position: absolute;
+      inset: -40% auto auto -20%;
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(139,92,246,0.22), transparent 60%);
+      pointer-events: none;
+    }
+
+    .skill-card:hover,
+    .project-card:hover { transform: translateY(-5px); }
+
+    .icon {
+      width: 56px;
+      height: 56px;
+      border-radius: 18px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, rgba(139,92,246,0.24), rgba(6,182,212,0.24), rgba(236,72,153,0.22));
+      color: #fff;
+      font-weight: 800;
+      margin-bottom: 1rem;
+      border: 1px solid rgba(255,255,255,0.12);
+    }
+
+    .project-card .tag {
+      display: inline-block;
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: #fff;
+      background: linear-gradient(90deg, rgba(139,92,246,0.32), rgba(6,182,212,0.28));
+      padding: 0.35rem 0.7rem;
+      border-radius: 999px;
+      margin-bottom: 0.9rem;
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .project-card ul {
+      list-style: disc;
+      padding-left: 1.1rem;
+      color: var(--muted);
+      margin-top: 0.85rem;
+    }
+
+    .project-card li { margin-bottom: 0.35rem; }
+
+    .projects-grid .project-card:nth-child(2) {
+      background:
+        linear-gradient(180deg, rgba(255,255,255,0.10), rgba(255,255,255,0.05)),
+        radial-gradient(circle at top right, rgba(6,182,212,0.18), transparent 30%);
+    }
+
+    .variant-card {
+      min-height: 220px;
+      padding: 1.4rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .variant-card h3 {
+      font-size: 1.08rem;
+      margin-bottom: 0.45rem;
+      color: #fff;
+    }
+
+    .variant-card p {
+      color: var(--muted);
+      font-size: 0.94rem;
+      max-width: 290px;
+    }
+
+    .variant-card.variant-a {
+      background:
+        linear-gradient(160deg, rgba(139,92,246,0.22), rgba(255,255,255,0.04)),
+        rgba(255,255,255,0.04);
+    }
+
+    .variant-card.variant-b {
+      background:
+        linear-gradient(160deg, rgba(6,182,212,0.18), rgba(255,255,255,0.04)),
+        rgba(255,255,255,0.04);
+    }
+
+    .variant-card.variant-c {
+      background:
+        linear-gradient(160deg, rgba(236,72,153,0.18), rgba(255,255,255,0.04)),
+        rgba(255,255,255,0.04);
+    }
+
+    .variant-visual {
+      position: absolute;
+      right: 14px;
+      bottom: 10px;
+      width: 120px;
+      height: 120px;
+    }
+
+    .variant-a .variant-visual::before,
+    .variant-a .variant-visual::after,
+    .variant-b .variant-visual::before,
+    .variant-b .variant-visual::after,
+    .variant-c .variant-visual::before,
+    .variant-c .variant-visual::after {
+      content: "";
+      position: absolute;
+    }
+
+    .variant-a .variant-visual::before {
+      inset: 18px;
+      border-radius: 24px;
+      background: linear-gradient(135deg, rgba(139,92,246,0.92), rgba(103,232,249,0.82));
+      transform: rotate(20deg);
+      box-shadow: 0 16px 30px rgba(139,92,246,0.22);
+    }
+
+    .variant-a .variant-visual::after {
+      width: 54px;
+      height: 54px;
+      border-radius: 18px;
+      right: 2px;
+      top: 4px;
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.18);
+    }
+
+    .variant-b .variant-visual::before {
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+      right: 10px;
+      bottom: 8px;
+      background: radial-gradient(circle at 32% 30%, rgba(255,255,255,0.95), rgba(103,232,249,0.88) 18%, rgba(6,182,212,0.62) 58%, rgba(6,182,212,0.08) 100%);
+    }
+
+    .variant-b .variant-visual::after {
+      width: 84px;
+      height: 84px;
+      right: 28px;
+      bottom: 24px;
+      border-radius: 50%;
+      border: 12px solid rgba(255,255,255,0.12);
+      border-top-color: rgba(103,232,249,0.9);
+      transform: rotateX(70deg);
+    }
+
+    .variant-c .variant-visual::before {
+      left: 20px;
+      bottom: 6px;
+      width: 0;
+      height: 0;
+      border-left: 38px solid transparent;
+      border-right: 38px solid transparent;
+      border-bottom: 72px solid rgba(236,72,153,0.9);
+      filter: drop-shadow(0 12px 24px rgba(236,72,153,0.24));
+    }
+
+    .variant-c .variant-visual::after {
+      width: 64px;
+      height: 64px;
+      right: 10px;
+      top: 10px;
+      clip-path: polygon(25% 6%, 75% 6%, 100% 50%, 75% 94%, 25% 94%, 0% 50%);
+      background: linear-gradient(135deg, rgba(192,132,252,0.95), rgba(244,114,182,0.8));
+    }
+
+    .contact-card {
+      background: linear-gradient(180deg, rgba(255,255,255,0.11), rgba(255,255,255,0.05));
+      height: 100%;
+    }
+
+    .contact-card p + h3 { margin-top: 1rem; }
+
+    footer {
+      padding: 1rem 0 1.5rem;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .footer-wrap {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      align-items: center;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding-top: 1.5rem;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .menu-btn {
+      display: none;
+      border: 1px solid rgba(255,255,255,0.12);
+      background: rgba(255,255,255,0.05);
+      color: white;
+      border-radius: 12px;
+      width: 46px;
+      height: 46px;
+      font-size: 1.2rem;
+    }
+
+    @media (max-width: 991px) {
+      .hero-grid,
+      .about-grid,
+      .contact-grid,
+      .skills-grid,
+      .projects-grid,
+      .variants-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-card { min-height: 520px; }
+    }
+
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .menu-btn { display: inline-grid; place-items: center; }
+      .hero { padding-top: 3.5rem; }
+      .metrics,
+      .mini-grid { grid-template-columns: 1fr; }
+      .section { padding: 4rem 0; }
+      .footer-wrap { flex-direction: column; align-items: flex-start; }
+      .hero-card { min-height: 500px; }
+      .three-d-scene { height: 220px; }
+      .ring { width: 140px; height: 140px; left: 10px; }
+      .cube.one { right: 20px; }
+      .cube.two { right: 130px; bottom: 105px; }
+      .sphere { width: 72px; height: 72px; right: 82px; }
+      .pyramid { left: 120px; transform: scale(.85) rotateX(16deg) rotateZ(-12deg); }
+      .hex-orb { right: 180px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <a href="#home" class="logo">
+        <div class="logo-mark"><span>K</span></div>
+        <span>KhalidPortfolio</span>
+      </a>
+      <nav class="nav-links">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <button class="menu-btn" aria-label="Menu">☰</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="orb"></div>
+      <div class="orb-small"></div>
+      <div class="orb-pink"></div>
+      <div class="container hero-grid">
+        <div>
+          <span class="badge">Modern Portfolio Experience</span>
+          <h1><span class="gradient-text">Khalid Naeem</span><br>Creative Digital Portfolio</h1>
+          <p>
+            A bold, modern, and responsive portfolio concept with glassmorphism, 3D visual elements,
+            layered gradients, and premium UI styling for a standout personal brand.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#projects">View Projects</a>
+            <a class="btn btn-outline" href="#contact">Contact Me</a>
+            <button type="button" class="btn btn-outline" id="shareSiteBtn" aria-label="Share or copy public link to this page">Share link</button>
+          </div>
+
+          <div class="metrics">
+            <div class="metric">
+              <h3>12+</h3>
+              <p>Featured projects with polished presentation and structure.</p>
+            </div>
+            <div class="metric">
+              <h3>3D UI</h3>
+              <p>Advanced visual styling with depth, gradients, and glow effects.</p>
+            </div>
+            <div class="metric">
+              <h3>100%</h3>
+              <p>Responsive layout for desktop, tablet, and mobile screens.</p>
+            </div>
+          </div>
+        </div>
+
+        <aside class="hero-card">
+          <div class="dashboard-card">
+            <h4>Portfolio Growth</h4>
+            <svg viewBox="0 0 300 120" width="100%" height="120">
+              <!-- grid lines -->
+              <line x1="0" y1="100" x2="300" y2="100" stroke="rgba(255,255,255,0.2)" />
+              <line x1="0" y1="60" x2="300" y2="60" stroke="rgba(255,255,255,0.1)" />
+              <line x1="0" y1="20" x2="300" y2="20" stroke="rgba(255,255,255,0.1)" />
+
+              <!-- line graph -->
+              <polyline 
+                fill="none" 
+                stroke="url(#grad)" 
+                stroke-width="3" 
+                points="0,90 75,70 150,50 225,30 300,20" />
+
+              <!-- gradient definition -->
+              <defs>
+                <linearGradient id="grad" x1="0" y1="0" x2="1" y2="0">
+                  <stop offset="0%" stop-color="#c084fc" />
+                  <stop offset="50%" stop-color="#67e8f9" />
+                  <stop offset="100%" stop-color="#f9a8d4" />
+                </linearGradient>
+              </defs>
+
+              <!-- points -->
+              <circle cx="0" cy="90" r="4" fill="#c084fc" />
+              <circle cx="75" cy="70" r="4" fill="#67e8f9" />
+              <circle cx="150" cy="50" r="4" fill="#67e8f9" />
+              <circle cx="225" cy="30" r="4" fill="#f9a8d4" />
+              <circle cx="300" cy="20" r="4" fill="#f9a8d4" />
+
+              <!-- labels -->
+              <text x="0" y="110" fill="white" font-size="10">20%</text>
+              <text x="75" y="110" fill="white" font-size="10">40%</text>
+              <text x="150" y="110" fill="white" font-size="10">60%</text>
+              <text x="225" y="110" fill="white" font-size="10">80%</text>
+              <text x="290" y="110" fill="white" font-size="10">100%</text>
+            </svg>
+          </div>
+
+          <div class="dashboard-card">
+            <h4>Creative Snapshot</h4>
+            <p style="opacity:.92; font-size:.95rem; margin-bottom: 1rem;">
+              Combining branding, interface design, gradient depth, and modern 3D-inspired visuals.
+            </p>
+            <div class="mini-grid">
+              <div class="mini-card">
+                <strong>Brand</strong>
+                <span>Identity focused</span>
+              </div>
+              <div class="mini-card">
+                <strong>Visual</strong>
+                <span>Premium UI style</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="dashboard-card" style="margin-top: 1.2rem;">
+            <h4>Core Focus</h4>
+            <p style="opacity:.88; font-size:.95rem;">
+              Portfolio design, creative direction, personal branding, responsive web layout,
+              and elegant presentation.
+            </p>
+          </div>
+
+          <div class="three-d-scene" aria-hidden="true">
+            <div class="ring"></div>
+            <div class="sphere"></div>
+            <div class="pyramid"></div>
+            <div class="hex-orb"></div>
+            <div class="cube one">
+              <div class="face front"></div>
+              <div class="face back"></div>
+              <div class="face right"></div>
+              <div class="face left"></div>
+              <div class="face top"></div>
+              <div class="face bottom"></div>
+            </div>
+            <div class="cube two">
+              <div class="face front"></div>
+              <div class="face back"></div>
+              <div class="face right"></div>
+              <div class="face left"></div>
+              <div class="face top"></div>
+              <div class="face bottom"></div>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <div class="sphere" style="top:20px; right:40px; position:absolute;"></div>
+      <div class="hex-orb" style="top:100px; left:60px; position:absolute;"></div>
+      <div class="container about-grid">
+        <div>
+          <span class="badge">About</span>
+          <h2 class="section-title">A portfolio with <span class="gradient-text">depth, glow, and character</span>.</h2>
+          <p class="section-subtitle">
+            This portfolio layout is designed to feel premium and memorable, using rich gradients,
+            glass effects, and 3D-style shapes to create a futuristic visual identity.
+          </p>
+        </div>
+        <div class="card">
+          <div class="about-list">
+            <div class="about-item">
+              <h3>Brand Presence</h3>
+              <p>Strong personal identity through custom logo, bold naming, and premium styling.</p>
+            </div>
+            <div class="about-item">
+              <h3>Modern UI Direction</h3>
+              <p>Glassmorphism, gradient overlays, layered depth, and polished spacing.</p>
+            </div>
+            <div class="about-item">
+              <h3>Responsive Experience</h3>
+              <p>Optimized sections and layout flow across desktop, tablet, and mobile devices.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="skills">
+      <div class="cube one" style="top:40px; left:40px; position:absolute;"></div>
+      <div class="sphere" style="top:120px; right:60px; position:absolute;"></div>
+      <div class="container">
+        <span class="badge">Project Management Skills</span>
+        <h2 class="section-title">Core Project Management Competencies</h2>
+        <p class="section-subtitle">
+          A comprehensive skill set focused on planning, execution, stakeholder management, and successful delivery of projects.
+        </p>
+
+        <div class="skills-grid">
+          <article class="skill-card">
+            <div class="icon">PL</div>
+            <h3>Project Planning</h3>
+            <p>Defining scope, timelines, milestones, and deliverables with structured roadmaps.</p>
+          </article>
+          <article class="skill-card">
+            <div class="icon">AG</div>
+            <h3>Agile & Scrum</h3>
+            <p>Sprint planning, backlog management, stand-ups, and iterative delivery cycles.</p>
+          </article>
+          <article class="skill-card">
+            <div class="icon">RS</div>
+            <h3>Risk Management</h3>
+            <p>Identifying risks, mitigation planning, and ensuring project stability.</p>
+          </article>
+          <article class="skill-card">
+            <div class="icon">ST</div>
+            <h3>Stakeholder Management</h3>
+            <p>Effective communication, expectation alignment, and relationship building.</p>
+          </article>
+          <article class="skill-card">
+            <div class="icon">EX</div>
+            <h3>Execution & Delivery</h3>
+            <p>Tracking progress, managing teams, and ensuring timely project completion.</p>
+          </article>
+          <article class="skill-card">
+            <div class="icon">AN</div>
+            <h3>Monitoring & Reporting</h3>
+            <p>KPI tracking, dashboards, performance analysis, and reporting insights.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="projects">
+      <div class="pyramid" style="top:60px; left:80px; position:absolute;"></div>
+      <div class="hex-orb" style="top:140px; right:80px; position:absolute;"></div>
+      <div class="container">
+        <span class="badge">Featured Projects</span>
+        <h2 class="section-title">Show your work in a <span class="gradient-text">high-impact layout</span></h2>
+        <p class="section-subtitle">
+          These cards are ready for your real project content, case studies, or creative showcases.
+        </p>
+
+        <div class="projects-grid">
+          <article class="project-card">
+            <span class="tag">Project 01</span>
+            <h3>Luxury Portfolio Landing Page</h3>
+            <p>A hero-driven design system with visual depth, bold gradients, and brand-first layout.</p>
+            <ul>
+              <li>Custom identity styling</li>
+              <li>Glassmorphism UI sections</li>
+              <li>Strong first-screen impact</li>
+            </ul>
+          </article>
+
+          <article class="project-card">
+            <span class="tag">Project 02</span>
+            <h3>3D Visual Web Concept</h3>
+            <p>A visually immersive section design featuring animated cubes and futuristic rings.</p>
+            <ul>
+              <li>Pure CSS 3D-inspired objects</li>
+              <li>Animated visual motion</li>
+              <li>Layered depth and shadows</li>
+            </ul>
+          </article>
+
+          <article class="project-card">
+            <span class="tag">Project 03</span>
+            <h3>Personal Brand Showcase</h3>
+            <p>A modern responsive portfolio designed to position Khalid Naeem with a premium look.</p>
+            <ul>
+              <li>Responsive portfolio layout</li>
+              <li>Modern cards and metrics</li>
+              <li>Elegant gradient presentation</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="variants">
+      <div class="sphere" style="top:40px; left:120px; position:absolute;"></div>
+      <div class="cube two" style="top:100px; right:120px; position:absolute;"></div>
+      <div class="container">
+        <span class="badge">3D Variants</span>
+        <h2 class="section-title">More 3D image variants for your portfolio</h2>
+        <p class="section-subtitle">
+          I added extra visual variants so the design feels richer and more futuristic while still staying responsive.
+        </p>
+
+        <div class="variants-grid">
+          <article class="variant-card card variant-a">
+            <h3>Glass Cube Variant</h3>
+            <p>Layered square form with soft glow for a clean modern 3D branding block.</p>
+            <div class="variant-visual"></div>
+          </article>
+
+          <article class="variant-card card variant-b">
+            <h3>Orbital Sphere Variant</h3>
+            <p>Rounded futuristic sphere with orbital ring styling for a premium tech-inspired look.</p>
+            <div class="variant-visual"></div>
+          </article>
+
+          <article class="variant-card card variant-c">
+            <h3>Prism Variant</h3>
+            <p>Triangular prism and geometric hex accent to add more visual variety and depth.</p>
+            <div class="variant-visual"></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="ring" style="top:20px; right:120px; position:absolute;"></div>
+      <div class="container contact-grid">
+        <div>
+          <span class="badge">Contact</span>
+          <h2 class="section-title">Let’s create something bold and memorable.</h2>
+          <p class="section-subtitle">
+            Add your real email, social profiles, portfolio links, or downloadable resume here.
+          </p>
+        </div>
+
+        <div class="contact-card">
+          <h3>Email</h3>
+          <p>khalidnaeem712@gmail.com</p>
+          <h3>LinkedIn</h3>
+          <p>linkedin.com/in/khalidnaeem</p>
+          <h3>Location</h3>
+          <p>Available for creative collaborations and digital projects</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="shareToast" class="share-toast" role="status" aria-live="polite" hidden></div>
+
+  <footer>
+    <div class="container footer-wrap">
+      <p>© 2026 Khalid Naeem. All rights reserved.</p>
+      <div class="footer-links">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </footer>
+  <script>
+    (function () {
+      var btn = document.getElementById('shareSiteBtn');
+      var toast = document.getElementById('shareToast');
+      if (!btn || !toast) return;
+
+      function showToast(message) {
+        toast.textContent = message;
+        toast.hidden = false;
+        toast.classList.add('is-visible');
+        clearTimeout(showToast._t);
+        showToast._t = setTimeout(function () {
+          toast.classList.remove('is-visible');
+          setTimeout(function () { toast.hidden = true; }, 350);
+        }, 2800);
+      }
+
+      btn.addEventListener('click', function () {
+        var url = window.location.href.split('#')[0];
+        if (window.location.protocol === 'file:') {
+          showToast('Put this site online first — then Share link copies your public URL.');
+          return;
+        }
+        if (navigator.share) {
+          navigator.share({ title: document.title, url: url }).catch(function () {});
+          return;
+        }
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(url).then(function () {
+            showToast('Public link copied to clipboard');
+          }).catch(function () {
+            window.prompt('Copy this public link:', url);
+          });
+          return;
+        }
+        window.prompt('Copy this public link:', url);
+      });
+    })();
+  </script>
+</body>
+</html>
